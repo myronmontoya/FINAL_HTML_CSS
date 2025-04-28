@@ -1,0 +1,202 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(./img/wallpapperFOndo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.encabezado, .menu-principal, .pie-pagina {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+.menu-principal a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.menu-principal a:hover {
+    text-decoration: underline;
+}
+
+
+.seccion-contenido {
+    display: grid;
+    grid-template-areas:
+        "articulo-principal articulo-principal"
+        "galeria-imagenes seccion-video"
+        "tabla-ejercicios tabla-ejercicios";
+    grid-gap: 30px;
+    padding: 40px;
+}
+
+
+.articulo-principal {
+    grid-area: articulo-principal;
+    background: #3a3a3a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(251, 251, 251, 0.1);
+    color: white;
+}
+
+
+.galeria-imagenes {
+    grid-area: galeria-imagenes;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.galeria-imagenes img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.seccion-video {
+    grid-area: seccion-video;
+    color: white;
+    background: #4f4f4f;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-video {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.contenedor-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.tabla-ejercicios {
+    grid-area: tabla-ejercicios;
+    background: #505050;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: white;
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}
+
+
+.pie-pagina {
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 990px) {
+    .seccion-contenido {
+        grid-template-areas:
+            "articulo-principal"
+            "galeria-imagenes"
+            "seccion-video"
+            "tabla-ejercicios";
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    .galeria-imagenes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .galeria-imagenes img {
+        width: 45%;
+        max-width: 250px;
+    }
+
+    .contenedor-video {
+        max-width: 90%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 570px) {
+    .seccion-contenido {
+        grid-template-areas:
+            "articulo-principal"
+            "galeria-imagenes"
+            "seccion-video"
+            "tabla-ejercicios";
+        grid-gap: 15px;
+        padding: 15px;
+    }
+
+    .galeria-imagenes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria-imagenes img {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .contenedor-video {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .menu-principal p {
+        font-size: 14px;
+    }
+
+    .encabezado h1, .seccion-video h2, .tabla-ejercicios h2, .articulo-principal h2 {
+        font-size: 22px;
+    }
+}
